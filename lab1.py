@@ -25,16 +25,26 @@ def filter_digits(any_str_list):
     any_str_list: list of strings
     Returns: ist of strings that do not have digits in them
     """
+    
+    for word in any_str_list:
+        if word.isdigit():
+	        any_str_list.remove(word)
+
+    return any_str_list
 
 def restock_inventory(inventory):
     """
     Increases inventory of each item in dictionary by 10
     inventory: dictionary with:
       key: tring that is the name of the inventory item
-      value: nteger that equals the number of that item currently on hand
+      value: integer that equals the number of that item currently on hand
     Returns: updated dictionary where each inventory item is restocked
     """
-
+    
+    for value in inventory.keys():
+	    inventory.keys() = value + 1
+    return inventory
+	
 def filter_0_items(inventory):
     """
     Removes items with value of 0 in the dictionary inventory
@@ -43,7 +53,7 @@ def filter_0_items(inventory):
       value: integer that equals the number of that item currently on hand
     Returns: updated inventory with any item that had 0 quantity removed
     """
-
+    for 
 def average_grades(grades):
     """
     Takes grade values from a dictionary and averages them into a final grade

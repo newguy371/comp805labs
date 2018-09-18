@@ -2,7 +2,7 @@
 Intro to Python data structures
 lab1start.py
 Chris Howell
-Updated 9/13/2018
+Updated 9/17/2018
 """
 
 def squared_nums(num_list):
@@ -25,9 +25,10 @@ def filter_digits(any_str_list):
     any_str_list: list of strings
     Returns: ist of strings that do not have digits in them
     """
-    
+    result = []
+	
     for word in any_str_list:
-        if word.isdigit():
+        if any(word.isdigit for word in any_str_list):
 	        any_str_list.remove(word)
 
     return any_str_list
@@ -36,15 +37,12 @@ def restock_inventory(inventory):
     """
     Increases inventory of each item in dictionary by 10
     inventory: dictionary with:
-      key: tring that is the name of the inventory item
+      key: string that is the name of the inventory item
       value: integer that equals the number of that item currently on hand
     Returns: updated dictionary where each inventory item is restocked
     """
     
-    for value in inventory.keys():
-	    inventory.keys() = value + 1
-    return inventory
-	
+    
 def filter_0_items(inventory):
     """
     Removes items with value of 0 in the dictionary inventory
@@ -53,7 +51,7 @@ def filter_0_items(inventory):
       value: integer that equals the number of that item currently on hand
     Returns: updated inventory with any item that had 0 quantity removed
     """
-    for 
+	
 def average_grades(grades):
     """
     Takes grade values from a dictionary and averages them into a final grade
@@ -76,6 +74,12 @@ if __name__ == '__main__':
 
     s = filter_digits(['Hell0 World', 'Hello World'])
     print(s)
+	
+    s2 = filter_digits(['Good-b1y3', 'fat guy', 'sw1tcher'])
+    print(s2)
+	
+    s3 = filter_digits(['one1',' ', '598524395823945h'])
+    print(s3)
 
     d = restock_inventory({'pencil':10, 'pen':8, 'paper':7})
     print(d)

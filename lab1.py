@@ -42,7 +42,10 @@ def restock_inventory(inventory):
     Returns: updated dictionary where each inventory item is restocked
     """
     
-    
+    for key in inventory.keys():
+        inventory[key] = inventory[key] + 10
+    return inventory
+
 def filter_0_items(inventory):
     """
     Removes items with value of 0 in the dictionary inventory
@@ -83,7 +86,13 @@ if __name__ == '__main__':
 
     d = restock_inventory({'pencil':10, 'pen':8, 'paper':7})
     print(d)
-
+	
+    d2 = restock_inventory({'eraser':21, 'paper clip':56, 'staples':0})
+    print(d2)
+	
+    d3 = restock_inventory({'melons':192, 'food':13.5, 'stuff':693})
+    print(d3)
+	
     d = filter_0_items({'pen':8, 'eraser':0, 'paper': 1})
     print(d)
 

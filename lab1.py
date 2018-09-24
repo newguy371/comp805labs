@@ -54,7 +54,15 @@ def filter_0_items(inventory):
       value: integer that equals the number of that item currently on hand
     Returns: updated inventory with any item that had 0 quantity removed
     """
-	
+    
+    result = {}
+    for key, val in inventory.items():    
+        inventory.update(result)
+        if val > 0:
+            inventory.update(result)
+            result[key] = inventory[key]
+    return result
+            
 def average_grades(grades):
     """
     Takes grade values from a dictionary and averages them into a final grade
@@ -64,7 +72,13 @@ def average_grades(grades):
     Returns: dictionary that has grade average values associated with student
     names
     """
-
+    result = {}
+    avg = []
+	
+    for key, val in grades.items():
+        grades[key] = sum(val)/len(val)
+        grades.update(result)
+            
 if __name__ == '__main__':
     t1 = squared_nums([1, 2, 3])
     print(t1)
@@ -93,8 +107,14 @@ if __name__ == '__main__':
     d3 = restock_inventory({'melons':192, 'food':13.5, 'stuff':693})
     print(d3)
 	
-    d = filter_0_items({'pen':8, 'eraser':0, 'paper': 1})
+    d = filter_0_items({'pen':8, 'eraser':0, 'paper':1})
     print(d)
+	
+    d2 = filter_0_items({'trains':0, 'planes':0, 'automobiles':0})
+    print(d2)
+	
+    d3 = filter_0_items({'canyons':20, 'rivers':1, 'mountains':46})
+    print(d3)
 
     d = average_grades({'Mike':[78, 100, 88], 'Sam':[0, 65, 80], 'Josh':[80, 80, 80]})
     print(d)

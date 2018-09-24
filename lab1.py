@@ -72,13 +72,12 @@ def average_grades(grades):
     Returns: dictionary that has grade average values associated with student
     names
     """
-    result = {}
-    avg = []
-	
+    
     for key, val in grades.items():
-        grades[key] = sum(val)/len(val)
-        grades.update(result)
-            
+        val = sum(val)/len(val)
+        grades[key] = val
+    return grades
+
 if __name__ == '__main__':
     t1 = squared_nums([1, 2, 3])
     print(t1)
@@ -118,3 +117,9 @@ if __name__ == '__main__':
 
     d = average_grades({'Mike':[78, 100, 88], 'Sam':[0, 65, 80], 'Josh':[80, 80, 80]})
     print(d)
+	
+    d2 = average_grades({'Me':[0, 0, 0], 'Myself':[35, 50, 60], 'I':[100, 103, 56]})
+    print(d2)
+	
+    d3 = average_grades({'Chris':[40, 50, 3, 75], 'Tucker':[1, 92], 'Lee':[25, 86, 77]})
+    print(d3)
